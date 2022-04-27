@@ -12,8 +12,8 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\android\app\src\debug\AndroidManifest.xml:6:5-66
-14-->C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\android\app\src\debug\AndroidManifest.xml:6:22-64
+14-->C:\Users\AZM\Desktop\crud-task\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\AZM\Desktop\crud-task\android\app\src\debug\AndroidManifest.xml:6:22-64
 15    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 16    <!-- <uses-sdk android:minSdkVersion="14" /> -->
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -61,31 +61,31 @@
 56            android:value="2" />
 57
 58        <service
-58-->[:firebase_storage] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+58-->[:firebase_storage] C:\Users\AZM\Desktop\crud-task\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 59            android:name="com.google.firebase.components.ComponentDiscoveryService"
-59-->[:firebase_storage] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+59-->[:firebase_storage] C:\Users\AZM\Desktop\crud-task\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
 60            android:directBootAware="true"
 60-->[com.google.firebase:firebase-common:20.1.0] C:\Users\AZM\.gradle\caches\transforms-2\files-2.1\b25e52f5739b5665d39d607baa2467f6\jetified-firebase-common-20.1.0\AndroidManifest.xml:35:13-43
 61            android:exported="false" >
 61-->[com.google.firebase:firebase-firestore:24.1.1] C:\Users\AZM\.gradle\caches\transforms-2\files-2.1\03a4bac28d3c7dac2475a64406193e79\jetified-firebase-firestore-24.1.1\AndroidManifest.xml:19:13-37
 62            <meta-data
-62-->[:firebase_storage] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+62-->[:firebase_storage] C:\Users\AZM\Desktop\crud-task\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 63                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-63-->[:firebase_storage] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
+63-->[:firebase_storage] C:\Users\AZM\Desktop\crud-task\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
 64                android:value="com.google.firebase.components.ComponentRegistrar" />
-64-->[:firebase_storage] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+64-->[:firebase_storage] C:\Users\AZM\Desktop\crud-task\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 65            <meta-data
-65-->[:cloud_firestore] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+65-->[:cloud_firestore] C:\Users\AZM\Desktop\crud-task\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 66                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-66-->[:cloud_firestore] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
+66-->[:cloud_firestore] C:\Users\AZM\Desktop\crud-task\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
 67                android:value="com.google.firebase.components.ComponentRegistrar" />
-67-->[:cloud_firestore] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+67-->[:cloud_firestore] C:\Users\AZM\Desktop\crud-task\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 68            <meta-data
-68-->[:firebase_core] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+68-->[:firebase_core] C:\Users\AZM\Desktop\crud-task\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 69                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-69-->[:firebase_core] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+69-->[:firebase_core] C:\Users\AZM\Desktop\crud-task\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
 70                android:value="com.google.firebase.components.ComponentRegistrar" />
-70-->[:firebase_core] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+70-->[:firebase_core] C:\Users\AZM\Desktop\crud-task\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 71            <meta-data
 71-->[com.google.firebase:firebase-firestore:24.1.1] C:\Users\AZM\.gradle\caches\transforms-2\files-2.1\03a4bac28d3c7dac2475a64406193e79\jetified-firebase-firestore-24.1.1\AndroidManifest.xml:20:13-22:85
 72                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
@@ -101,21 +101,21 @@
 77        </service>
 78
 79        <provider
-79-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+79-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
 80            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-80-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
+80-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
 81            android:authorities="com.example.crud_task.flutter.image_provider"
-81-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
+81-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
 82            android:exported="false"
-82-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+82-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
 83            android:grantUriPermissions="true" >
-83-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+83-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
 84            <meta-data
-84-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
+84-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
 85                android:name="android.support.FILE_PROVIDER_PATHS"
-85-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+85-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
 86                android:resource="@xml/flutter_image_picker_file_paths" />
-86-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task-20220426T173942Z-001\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
+86-->[:image_picker_android] C:\Users\AZM\Desktop\crud-task\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
 87        </provider>
 88
 89        <uses-library

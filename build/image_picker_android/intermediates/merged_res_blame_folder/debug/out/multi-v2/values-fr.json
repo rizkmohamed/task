@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\AZM\\Desktop\\crud-task-20220426T173942Z-001\\crud-task\\build\\image_picker_android\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fr\\values-fr.xml",
+            "outputFile": "C:\\Users\\AZM\\Desktop\\crud-task\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\values-fr\\values-fr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\AZM\\.gradle\\caches\\transforms-2\\files-2.1\\14b93615368c2249f1830e26ca064ab5\\core-1.6.0\\res\\values-fr\\values-fr.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\AZM\\Desktop\\crud-task-20220426T173942Z-001\\crud-task\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\values-fr\\values-fr.xml",
+            "outputFile": "C:\\Users\\AZM\\Desktop\\crud-task\\build\\image_picker_android\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fr\\values-fr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\AZM\\.gradle\\caches\\transforms-2\\files-2.1\\14b93615368c2249f1830e26ca064ab5\\core-1.6.0\\res\\values-fr\\values-fr.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\AZM\\Desktop\\crud-task-20220426T173942Z-001\\crud-task\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-as\\values-as.xml",
+            "outputFile": "C:\\Users\\AZM\\Desktop\\crud-task\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-as\\values-as.xml",
             "map": [
                 {
                     "source": "C:\\Users\\AZM\\.gradle\\caches\\transforms-2\\files-2.1\\1c0769389455a4c14b7a50bc2530cb4a\\jetified-play-services-base-18.0.1\\res\\values-as\\values.xml",
