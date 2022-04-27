@@ -118,6 +118,9 @@ class _HomeState extends State<Home> {
                                     deleteItem(snapshot
                                         .data!.docChanges[index].doc.id);
                                   });
+                                   Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (_) => const Home()));
+
                                 },
                                 child: const Text(
                                   'حذف',
