@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crud_task/add_page.dart';
 import 'package:crud_task/edit_page.dart';
-import 'package:crud_task/widgets/vertical_space.dart';
+
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        appBar: AppBar(
+        appBar: AppBar(backgroundColor: Colors.white,
           leading: ElevatedButton(
             style: ElevatedButton.styleFrom(
               shape: const StadiumBorder(),

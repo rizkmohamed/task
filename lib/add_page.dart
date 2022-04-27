@@ -24,6 +24,7 @@ class _AddPageState extends State<AddPage> {
   XFile? file;
   ImagePicker image = ImagePicker();
   String url = "";
+  File? imageFile;
   String? title;
   String? content;
   CollectionReference items = FirebaseFirestore.instance.collection('items');
@@ -34,11 +35,11 @@ class _AddPageState extends State<AddPage> {
       file = await image.pickImage(source: ImageSource.gallery, maxWidth: 1920);
 
       final String fileName = path.basename(file!.path);
-      File imageFile = File(file!.path);
+      imageFile = File(file!.path);
 
       try {
         await storage.ref(fileName).putFile(
-              imageFile,
+              imageFile!,
             );
         url = await storage.ref(fileName).getDownloadURL();
 
@@ -55,7 +56,7 @@ class _AddPageState extends State<AddPage> {
     }
   }
 
-  Future<void> addTaskInFireStore() async {
+  Future<void> addItemInFireStore() async {
     await items.add({
       'title': titleController.text,
       'imageUrl': url,
@@ -86,9 +87,19 @@ class _AddPageState extends State<AddPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Container(
-                    height: 100,
-                    width: 100,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(15), // Image border
+                    child: SizedBox.fromSize(
+                        size: const Size.fromRadius(48), // Image radius
+                        child: imageFile == null
+                            ? Image.asset(
+                                'assets/images.png',
+                                fit: BoxFit.cover,
+                                color: Colors.black,
+                              )
+                            : Image.file(imageFile!)
+                      
+                        ),
                   ),
                   TextButton(
                       onPressed: () async {
@@ -135,7 +146,7 @@ class _AddPageState extends State<AddPage> {
                       title = titleController.text;
                       content = contentController.text;
                     });
-                    await addTaskInFireStore();
+                    await addItemInFireStore();
                   }
                 },
                 style: ElevatedButton.styleFrom(
