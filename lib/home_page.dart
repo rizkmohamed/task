@@ -5,8 +5,9 @@ import 'package:crud_task/edit_page.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
-  final DocumentSnapshot? docid;
-  const Home({Key? key, this.docid}) : super(key: key);
+  const Home({
+    Key? key,
+  }) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
@@ -16,28 +17,36 @@ class _HomeState extends State<Home> {
   final Stream<QuerySnapshot> _itemsStream =
       FirebaseFirestore.instance.collection('items').snapshots();
   CollectionReference items = FirebaseFirestore.instance.collection('items');
+  deleteItem(id) async {
+    await items.doc(id).delete();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.white,
-          leading: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              shape: const StadiumBorder(),
-              primary: Colors.green,
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          title: SizedBox(
+            width: 100,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.green,
+              ),
+              child: const Text(
+                'اضافة',
+              ),
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const AddPage(),
+                  ),
+                );
+              },
             ),
-            child: const Text(
-              'اضافة',
-            ),
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => const AddPage(),
-                ),
-              );
-            },
           ),
         ),
         body: StreamBuilder(
@@ -74,20 +83,20 @@ class _HomeState extends State<Home> {
                       padding: const EdgeInsets.all(10),
                       child: ListTile(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(10),
                           side: const BorderSide(
                             color: Colors.grey,
                           ),
                         ),
                         leading: Container(
-                          padding: const EdgeInsets.all(3), // Border width
+                          padding: const EdgeInsets.all(1), // Border width
                           decoration: BoxDecoration(
                               color: Colors.grey,
-                              borderRadius: BorderRadius.circular(20)),
+                              borderRadius: BorderRadius.circular(10)),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(10),
                             child: SizedBox.fromSize(
-                              size: const Size.fromRadius(48), // Image radius
+                              size: const Size.fromRadius(40), // Image radius
                               child: Image.network(
                                   snapshot
                                       .data!.docChanges[index].doc['imageUrl'],
@@ -105,7 +114,10 @@ class _HomeState extends State<Home> {
                           children: [
                             GestureDetector(
                                 onTap: () {
-                                  widget.docid!.reference.delete();
+                                  setState(() {
+                                    deleteItem(snapshot
+                                        .data!.docChanges[index].doc.id);
+                                  });
                                 },
                                 child: const Text(
                                   'حذف',

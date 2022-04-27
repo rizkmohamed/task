@@ -8,6 +8,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as path;
 
+import 'home_page.dart';
 import 'widgets/box_field.dart';
 
 class AddPage extends StatefulWidget {
@@ -78,85 +79,90 @@ class _AddPageState extends State<AddPage> {
         child: Form(
           key: _formKey,
           child: Scaffold(
-              body: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              const Text('اضافة عنصر'),
-              const VerticalSpace(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(15), // Image border
-                    child: SizedBox.fromSize(
-                        size: const Size.fromRadius(48), // Image radius
-                        child: imageFile == null
-                            ? Image.asset(
-                                'assets/images.png',
-                                fit: BoxFit.cover,
-                                color: Colors.black,
-                              )
-                            : Image.file(imageFile!)
-                      
-                        ),
-                  ),
-                  TextButton(
-                      onPressed: () async {
-                        await getimage();
-                      },
-                      child: const Text('اختر صورة')),
-                ],
-              ),
-              const VerticalSpace(),
-              BoxField(
-                controller: titleController,
-                hinttext: 'عنوان العنصر',
-                expand: false,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'يرجى ادخال عنوان العنصر';
-                  }
-                  return null;
-                },
-              ),
-              const VerticalSpace(),
-              Expanded(
-                flex: 4,
-                child: BoxField(
-                  controller: contentController,
-                  hinttext: 'تفاصيل العنصر',
-                  expand: true,
+              body: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                const Text('اضافة عنصر'),
+                const VerticalSpace(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(15), // Image border
+                      child: SizedBox.fromSize(
+                          size: const Size.fromRadius(48), // Image radius
+                          child: imageFile == null
+                              ? Image.asset(
+                                  'assets/images.png',
+                                  fit: BoxFit.cover,
+                                  
+                                )
+                              : Image.file(imageFile!, fit: BoxFit.cover,)
+                        
+                          ),
+                    ),
+                    TextButton(
+                        onPressed: () async {
+                          await getimage();
+                        },
+                        child: const Text('اختر صورة')),
+                  ],
+                ),
+                const VerticalSpace(),
+                BoxField(
+                  controller: titleController,
+                  hinttext: 'عنوان العنصر',
+                  expand: false,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'يرجى ادخال تفاصيل العنصر';
+                      return 'يرجى ادخال عنوان العنصر';
                     }
                     return null;
                   },
                 ),
-              ),
-              ElevatedButton(
-                child: const Text(
-                  'اضافة',
-                  style: TextStyle(color: Colors.white),
+                const VerticalSpace(),
+                Expanded(
+                  flex: 4,
+                  child: BoxField(
+                    controller: contentController,
+                    hinttext: 'تفاصيل العنصر',
+                    expand: true,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'يرجى ادخال تفاصيل العنصر';
+                      }
+                      return null;
+                    },
+                  ),
                 ),
-                onPressed: () async {
-                  if (_formKey.currentState?.validate() != null) {
-                    setState(() {
-                      title = titleController.text;
-                      content = contentController.text;
-                    });
-                    await addItemInFireStore();
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.green,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    )),
-              )
-            ],
-          )),
+                ElevatedButton(
+                  child: const Text(
+                    'اضافة',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () async {
+                    if (_formKey.currentState?.validate() != null) {
+                      setState(() {
+                        title = titleController.text;
+                        content = contentController.text;
+                      });
+                      await addItemInFireStore();
+                       Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const Home()));
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.green,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      )),
+                )
+                          ],
+                        ),
+              )),
         ));
   }
 }

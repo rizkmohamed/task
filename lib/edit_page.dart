@@ -13,16 +13,17 @@ import 'home_page.dart';
 import 'widgets/box_field.dart';
 
 class EditPage extends StatefulWidget {
-   
   final DocumentSnapshot docid;
-  const EditPage({Key? key, required this.docid,}) : super(key: key);
+  const EditPage({
+    Key? key,
+    required this.docid,
+  }) : super(key: key);
 
   @override
   State<EditPage> createState() => _EditPageState();
 }
 
 class _EditPageState extends State<EditPage> {
-
   final _formKey = GlobalKey<FormState>();
   TextEditingController title = TextEditingController();
   TextEditingController content = TextEditingController();
@@ -30,7 +31,7 @@ class _EditPageState extends State<EditPage> {
   ImagePicker image = ImagePicker();
   String url = "";
   File? imageFile;
-  
+
   FirebaseStorage storage = FirebaseStorage.instance;
 
   @override
@@ -72,9 +73,6 @@ class _EditPageState extends State<EditPage> {
       'title': title.text,
       'descrition': content.text,
       'imageUrl': url,
-    }).whenComplete(() {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (_) => const Home()));
     });
   }
 
@@ -118,30 +116,36 @@ class _EditPageState extends State<EditPage> {
                 ],
               ),
               const VerticalSpace(),
-              BoxField(
-                controller: title,
-                hinttext: 'عنوان العنصر',
-                expand: false,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'يرجى ادخال عنوان العنصر';
-                  }
-                  return null;
-                },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: BoxField(
+                  controller: title,
+                  hinttext: 'عنوان العنصر',
+                  expand: false,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'يرجى ادخال عنوان العنصر';
+                    }
+                    return null;
+                  },
+                ),
               ),
               const VerticalSpace(),
               Expanded(
                 flex: 4,
-                child: BoxField(
-                  controller: content,
-                  hinttext: 'تفاصيل قصيرة عن العنصر',
-                  expand: true,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'يرجى ادخال تفاصيل العنصر';
-                    }
-                    return null;
-                  },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: BoxField(
+                    controller: content,
+                    hinttext: 'تفاصيل قصيرة عن العنصر',
+                    expand: true,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'يرجى ادخال تفاصيل العنصر';
+                      }
+                      return null;
+                    },
+                  ),
                 ),
               ),
               ElevatedButton(
@@ -153,6 +157,8 @@ class _EditPageState extends State<EditPage> {
                   if (_formKey.currentState?.validate() != null) {
                     setState(() {});
                     await updateItemInFireStore();
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (_) => const Home()));
                   }
                 },
                 style: ElevatedButton.styleFrom(
